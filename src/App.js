@@ -6,7 +6,7 @@ class App extends Component {
     render() {
         return (
             <>
-                <FormDeCadastro /> {/*isso é um componente*/}
+                <FormDeCadastro /> {/*chamada de componente*/}
                 <ListaDeNotas />
             </>
         );
