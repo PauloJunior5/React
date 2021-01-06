@@ -1,0 +1,14 @@
+.lista-notas {
+    margin: 20px;
+    display: flex;
+    list-style-type: none;
+}
+
+.lista-notas_item {
+    border: 1px solid;
+    border-radius: 16px;
+    margin: 20px;
+    flex: auto;
+    text-align: center;
+    padding: 20px;
+}
