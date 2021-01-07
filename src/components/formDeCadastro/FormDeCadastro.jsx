@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./estilo.css";
 
 class FormDeCadastro extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.titulo = "";
     this.texto = "";
   }
@@ -21,7 +21,7 @@ class FormDeCadastro extends Component {
   _criarNota(evento) {
     evento.preventDefault();
     evento.stopPropagation();
-    console.log(`uma nova nota - ${this.titulo} - foi criada!`);
+    this.props.criarNota(this.titulo, this.texto);
   }
 
   render() {
