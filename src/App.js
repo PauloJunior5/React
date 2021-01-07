@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ListaDeNotas from './components/listaDeNotas';
-import FormDeCadastro from './components/FormDeCadastro';
+import FormDeCadastro from './components/formDeCadastro';
 import './assets/App.css';
 import './assets/index.css';
 

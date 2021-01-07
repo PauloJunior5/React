@@ -1,14 +1,15 @@
 .lista-notas {
-    margin: 20px;
-    display: flex;
+    background-color: var(--fundo);
+    flex-grow: 3;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
     list-style-type: none;
-}
-
-.lista-notas_item {
-    border: 1px solid;
-    border-radius: 16px;
-    margin: 20px;
-    flex: auto;
-    text-align: center;
-    padding: 20px;
-}
+    padding-left: 24px;
+    padding-top: 24px;
+  }
+  .lista-notas_item {
+    margin: 12px;
+    max-width: 240px;
+    max-height: 400px;
+    display: inline;
+  }
