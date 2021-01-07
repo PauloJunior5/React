@@ -4,7 +4,7 @@ class FormDeCadastro extends Component {
     return (
       <form>
         <input type="text" placeholder="Titulo" />
-        <textarea placeholder="Escreva sua nota..." />
+        <textarea placeholder="Escreva sua nota..." rows={15} />
         <button>Criar Nota</button>
       </form>
     );
