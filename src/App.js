@@ -1,41 +1,58 @@
 import React, { Component } from "react";
 import ListaDeNotas from "./components/listaDeNotas";
 import FormDeCadastro from "./components/formDeCadastro";
+import ListaDeCategorias from "./components/listaDeCategorias";
 import "./assets/App.css";
 import "./assets/index.css";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      notas: [],
-    };
-  }
+    constructor() {
+        super();
+        this.state = {
+            notas: [],
+            categorias: [],
+        };
+    }
 
-  criarNota(titulo, texto) {
-    const novaNota = { titulo, texto };
-    const novoArrayNotas = [...this.state.notas, novaNota];
-    const novoState = {
-      notas: novoArrayNotas,
-    };
-    this.setState(novoState);
-  }
+    criarNota(titulo, texto) {
+        const novaNota = { titulo, texto };
+        const novoArrayNotas = [...this.state.notas, novaNota];
+        const novoState = {
+            notas: novoArrayNotas,
+        };
+        this.setState(novoState);
+    }
 
-  deletarNota(index) {
-    let arrayNotas = this.state.notas;
-    arrayNotas.splice(index, 1);
-    this.setState(arrayNotas);
-  }
+    deletarNota(index) {
+        let arrayNotas = this.state.notas;
+        arrayNotas.splice(index, 1);
+        this.setState({ notas: arrayNotas });
+    }
 
-  render() {
-    return (
-      <section className="conteudo">
-        {/*chamada de componentes*/}
-        <FormDeCadastro criarNota={this.criarNota.bind(this)} />
-        <ListaDeNotas notas={this.state.notas} apagarNota={this.deletarNota.bind(this)} />
-      </section>
-    );
-  }
+    adicionarCategoria(nomeCategoria) {
+        const novoArrayCategorias = [...this.state.categorias, nomeCategoria];
+        const novoState = { ...this.state, categorias: novoArrayCategorias };
+        this.setState(novoState);
+    }
+
+    render() {
+        return (
+            <section className="conteudo">
+                {/*chamada de componentes*/}
+                <FormDeCadastro criarNota={this.criarNota.bind(this)} />
+                <main className="conteudo-principal">
+                    <ListaDeCategorias
+                        categorias={this.state.categorias}
+                        adicionarCategoria={this.adicionarCategoria.bind(this)}
+                    />
+                    <ListaDeNotas
+                        notas={this.state.notas}
+                        apagarNota={this.deletarNota.bind(this)}
+                    />
+                </main>
+            </section>
+        );
+    }
 }
 
 export default App;
