@@ -23,7 +23,7 @@ class App extends Component {
 
   deletarNota(index) {
     let arrayNotas = this.state.notas;
-    arrayNotas.splice(index,1);
+    arrayNotas.splice(index, 1);
     this.setState(arrayNotas);
   }
 

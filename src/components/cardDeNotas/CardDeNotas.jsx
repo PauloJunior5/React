@@ -7,7 +7,6 @@ import deleteSVG from "../../assets/delete.svg";
 // import {ReactComponent as DeleteSVG } from "../../assets/delete.svg";
 
 class CardDeNotas extends Component {
-
   apagar() {
     const index = this.props.index;
     this.props.apagarNota(index);
