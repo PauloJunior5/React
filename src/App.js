@@ -39,7 +39,7 @@ class App extends Component {
         return (
             <section className="conteudo">
                 {/*chamada de componentes*/}
-                <FormDeCadastro criarNota={this.criarNota.bind(this)} />
+                <FormDeCadastro categorias={this.state.categorias} criarNota={this.criarNota.bind(this)} />
                 <main className="conteudo-principal">
                     <ListaDeCategorias
                         categorias={this.state.categorias}
